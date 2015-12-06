@@ -13,16 +13,17 @@
 					function(){
 					
 					/**
-					 0: hasn't started
-					 1: Conntected to server
-					 2: Server has received our request
-					 3: Server is processing
-					 4: Request is finished and data is ready
+					Holds the status of the XMLHttpRequest. Changes from 0 to 4: 
+						0: request not initialized 
+						1: server connection established
+						2: request received 
+						3: processing request 
+						4: request finished and response is ready
 					*/
 					//alert(xmlhttp.responseText);
 					 if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 						 
-						 showPanel(anId,xmlhttp.responseText ) //= xmlhttp.responseText;						 
+						 showPanel(anId, xmlhttp.responseText ) //= xmlhttp.responseText;						 
 						 
 					 }else{
 						 showPanel(anId, "waiting for response" ) ;
@@ -31,8 +32,11 @@
 					 				
 				}
 				
+				//xmlhttp.open("Get", "HelloWorld.do?fName="+document.getElementById("fName").value, true);
 				xmlhttp.open("POST", "HelloWorld.do", true);
-				xmlhttp.send();
+				xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xmlhttp.send("fName=Henry&lname=Ford");
+				//xmlhttp.send();
 				}
 			//	
 				function showPanel(fieldName, value) {
@@ -56,12 +60,11 @@
 			<div id="other">Here I Am</div>
 			<input name="somebutton" type="button" value="Push Me" onClick="helloWorld('other')" />
 			
-			<form id="myform" action="HelloWorld.do" >
- 						 	First name:<input type="text" name="Push Me"><br>
-  							Last name: <input id = "lastName" type="text" name="lname"><br>
-  							E-mail: <input type="email" name="email" autocomplete="off"><br>
-  						<input type="submit" onClick = "helloWorld('lastName'); return false;">
-			</form>
+			
+ 			First name:<input id="fName" type="text" name="fName"><br>
+ 			Re-name:<input id="rName" type="text" name="rName"><br>
+  						
+			
 	</body>
 
 </html>
