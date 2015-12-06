@@ -23,8 +23,8 @@
 					//alert(xmlhttp.responseText);
 					 if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 						 
-						 showPanel(anId, xmlhttp.responseText ) //= xmlhttp.responseText;						 
-						 
+						 showPanel(anId, xmlhttp.responseText ) //= xmlhttp.responseText;	
+						 document.getElementById("fName").value = "Yahoo";						 
 					 }else{
 						 showPanel(anId, "waiting for response" ) ;
 						 //document.getElementById('sayhello').innerHTML = "waiting for response";
@@ -61,7 +61,7 @@
 			<input name="somebutton" type="button" value="Push Me" onClick="helloWorld('other')" />
 			
 			
- 			First name:<input id="fName" type="text" name="fName"><br>
+ 			First name:<input id="fName" type="text" name="firstName" oninput="helloWorld('fName')"><br>
  			Re-name:<input id="rName" type="text" name="rName"><br>
   						
 			

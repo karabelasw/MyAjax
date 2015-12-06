@@ -24,7 +24,7 @@ public class Ajax extends HttpServlet {
 	
 
 		System.out.println("YAHOOOO---->Hello World");
-		System.out.println("Parameter sent was " + request.getParameter("fName"));
+		System.out.println("Parameter sent was " + request.getParameter("firstName"));
 		response.setContentType("text/xml");
 		response.getWriter().print("Hello World!");
 		System.out.println("server responded---->Hello World");
