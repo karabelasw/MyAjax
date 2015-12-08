@@ -24,10 +24,14 @@ public class Ajax extends HttpServlet {
 	
 
 		System.out.println("YAHOOOO---->Hello World");
-		System.out.println("Parameter sent was " + request.getParameter("firstName"));
+		System.out.println("First Name sent was " + request.getParameter("firstName"));
+		System.out.println("radio button selected " + request.getParameter("sexy"));
+		String combinedName = request.getParameter("sexy") + ", "+ request.getParameter("firstName");
+		
 		response.setContentType("text/xml");
-		response.getWriter().print("Hello World!");
-		System.out.println("server responded---->Hello World");
+		response.getWriter().print(combinedName);
+		
+		System.out.println("server received---->" + combinedName);
 		
 		
 	}
