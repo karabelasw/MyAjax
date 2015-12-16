@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Task List</title>
+		<link rel="stylesheet" type="text/css" href="style/tasks.css" media="screen" />
+	</head>
+	<body>
+		<header>
+			<span>Task List</span>
+		</header>
+		<main>
+			<section>
+				<form>
+					<div>
+						<label>Task</label>
+						<input type="text" required="required" name="tasks" class="Large" placeholder="Breathe, Relax, Aim and Squeeze" />
+					</div>
+					<div>
+						<label>Required By:</label>
+						<input type="date" required="required" name="requiredBy" />
+					</div>
+					<div>
+						<label>Category</label>
+						<select name="category">
+							<option value="personal">Personal</option>
+							<option value="work">Work</option>							
+						</select>
+					</div>
+					<nav>
+						<a href="#">Save Task</a> <a href="#">Clear Task</a>	
+					</nav>
+				</form>
+				
+			</section>
+			<section>
+				<table id="tblTasks">
+					<colgroup>
+						<col width="50%">
+						<col width="25%">
+						<col width="25%">					
+					</colgroup>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Due</th>
+							<th>Category</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Return Library Book</td>
+							<td><time datetime="2015-12-25">2015-12-25</time></td>
+							<td>Work</td>
+						</tr>
+						<tr>
+							<td>Start Oldsmobile</td>
+							<td><time datetime="2015-12-26">2015-12-26</time></td>
+							<td>Personal</td>
+						</tr>						
+					</tbody>					
+				</table>				
+				<nav><a href="#">Add Task</a></nav>
+			</section>
+		</main>
+		<footer>You have 2 tasks</footer>
+	</body>
+
+</html>
